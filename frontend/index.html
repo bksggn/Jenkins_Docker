@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DB Test</title>
+</head>
+<body>
+  <h1>Database Connection Status:</h1>
+  <div id="status">Checking...</div>
+
+  <script>
+  fetch('/test-db')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('status').innerText = data;
+    })
+    .catch(err => {
+      document.getElementById('status').innerText = 'connection not stabiles';
+    });
+</script>
+
+
+</body>
+</html>
